@@ -1,10 +1,12 @@
+import { LOGO_URL } from "../utils/constants";
+
 const Header = () => {
     return (
       <div className="flex items-center justify-between px-4 py-2 border-1 ">
         {/* Logo */}
         <div>
           <img
-            src="https://static.vecteezy.com/system/resources/previews/052/792/818/non_2x/restaurant-logo-design-vector.jpg"
+            src={LOGO_URL}
             alt="logo"
             className="w-[100px] h-[80px] object-cover"
           />

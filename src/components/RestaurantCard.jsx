@@ -2,6 +2,7 @@ import React from "react";
 import {CDN_URL} from "../utils/constants.js";
 
 const RestaurantCard = ({restaurant}) => {
+    
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer">
       {/* Restaurant Image */}

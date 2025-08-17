@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Loading from "./Loading";
 import { apiData } from "../utils/apiData";
 import { Link } from "react-router";
+import userContext from "../utils/userContext";
 
 const Body = () => {
   const OfferRestaurant = WrapperHOC(RestaurantCard);
+
+  const {loggedInUser , setUserName} = useContext(userContext);
 
   console.log(
     apiData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
@@ -51,6 +54,8 @@ const Body = () => {
         >
           Top Rated
         </button>
+
+        <input type="text"  placeholder="UserName"  value={loggedInUser} onChange={(e)=>{setUserName(e.target.value)}}/>
       </div>
 
       {/* Restaurant Cards Section */}

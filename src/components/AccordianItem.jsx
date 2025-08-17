@@ -1,6 +1,15 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
+import { addItem } from "../Redux/cartSlice/cartSlice";
 
 const AccordionItem = ({ section, isOpen, handleToggle }) => {
+
+  const dispatch = useDispatch();
+
+  const handleClick = (item) =>{
+    dispatch(addItem(item));
+  }
+
   return (
     <div className="border border-gray-200 rounded-lg mb-4 shadow-sm overflow-hidden">
       <button
@@ -50,6 +59,7 @@ const AccordionItem = ({ section, isOpen, handleToggle }) => {
                     />
                     <button
                       className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-white text-green-600 border border-green-600 px-3 py-1 text-xs font-semibold rounded shadow-sm hover:bg-green-50"
+                      onClick={()=>{handleClick(info)}}
                     >
                       ADD
                     </button>

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Loading from "./Loading";
 import { apiData } from "../utils/apiData";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import userContext from "../utils/userContext";
 
 const Body = () => {
